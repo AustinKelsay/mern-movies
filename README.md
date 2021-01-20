@@ -1,1 +1,1 @@
-# docker-node-example
+# MERN Movies

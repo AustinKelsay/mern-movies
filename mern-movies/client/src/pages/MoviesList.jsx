@@ -18,6 +18,23 @@ const Delete = styled.div`
     cursor: pointer;
 `
 
+const Card = styled.div`
+    width: 60%;
+    border: 1px solid black;
+    margin: 1% auto;
+    padding: 1%;
+`
+
+const TimesContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 5px;
+`
+
 class UpdateMovie extends Component {
     updateUser = event => {
         event.preventDefault()
@@ -127,14 +144,19 @@ class MoviesList extends Component {
         return (
             <Wrapper>
                 {showTable && (
-                    <ReactTable
-                        data={movies}
-                        columns={columns}
-                        loading={isLoading}
-                        defaultPageSize={10}
-                        showPageSizeOptions={true}
-                        minRows={0}
-                    />
+                    movies.map((movie) => {
+                        return(
+                            <Card>
+                                <p>{movie.name}</p>
+                                <p>{movie.rating}</p>
+                                <TimesContainer>
+                                    {movie.time.map((tme) => {
+                                        return <p>{tme}</p>
+                                    })}
+                                </TimesContainer>
+                            </Card>
+                        )
+                    })
                 )}
             </Wrapper>
         )

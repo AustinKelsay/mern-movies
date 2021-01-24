@@ -20,15 +20,22 @@ const Delete = styled.div`
 
 const Card = styled.div`
     width: 60%;
+    color: black;
     border: 1px solid black;
     margin: 1% auto;
     padding: 1%;
+    background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(191, 214, 65) 75%)
+`
+
+const CardText = styled.p`
+    color: black;
 `
 
 const TimesContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: oldlace;
     width: 95%;
     padding: 1%;
     border: 1px solid black;
@@ -147,11 +154,12 @@ class MoviesList extends Component {
                     movies.map((movie) => {
                         return(
                             <Card>
-                                <p>{movie.name}</p>
-                                <p>{movie.rating}</p>
+                                <CardText>{movie.name}</CardText>
+                                <CardText>{movie.rating}</CardText>
+                                Showtimes:
                                 <TimesContainer>
                                     {movie.time.map((tme) => {
-                                        return <p>{tme}</p>
+                                        return <CardText>{tme}</CardText>
                                     })}
                                 </TimesContainer>
                             </Card>

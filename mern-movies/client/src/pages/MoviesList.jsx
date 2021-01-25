@@ -29,13 +29,19 @@ const Card = styled.div`
 
 const CardText = styled.p`
     color: black;
+    font-weight: bold;
+`
+const CardHeader = styled.h1`
+    margin: 2% auto;
+    font-size: 1.7rem;
+    color: black;
 `
 
 const TimesContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: oldlace;
+    background-color: white;
     width: 95%;
     padding: 1%;
     border: 1px solid black;
@@ -154,7 +160,8 @@ class MoviesList extends Component {
                     movies.map((movie) => {
                         return(
                             <Card>
-                                <CardText>{movie.name}</CardText>
+                                <CardHeader>{movie.name}</CardHeader>
+                                Ratings:
                                 <CardText>{movie.rating}</CardText>
                                 Showtimes:
                                 <TimesContainer>
